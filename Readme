@@ -1,0 +1,14 @@
+Cách hoạt động:
+folderPath=A chỉ định thư mục chứa các file bạn muốn đổi tên (ở đây là thư mục A).
+Dùng vòng lặp for %%f in ("%folderPath%\*") để duyệt qua từng file trong thư mục A.
+set "ext=%%~xf" lấy phần mở rộng (định dạng file) của mỗi file.
+ren "%%f" "!count!!ext!" đổi tên file hiện tại thành số thứ tự (bắt đầu từ 1) và giữ nguyên phần mở rộng.
+Tăng biến count sau khi mỗi file được đổi tên.
+
+
+Cách sử dụng:
+Tạo một file với phần mở rộng .bat, ví dụ: rename_files.bat.
+Sao chép đoạn mã trên vào file .bat này.
+Đặt file .bat vào cùng thư mục với thư mục A hoặc chỉ định đường dẫn chính xác tới A.
+Chạy file .bat để thực hiện đổi tên hàng loạt.
+Sau khi chạy, các file trong thư mục A sẽ được đổi tên lần lượt từ 1, 2, 3,... giữ nguyên định dạng file ban đầu.
